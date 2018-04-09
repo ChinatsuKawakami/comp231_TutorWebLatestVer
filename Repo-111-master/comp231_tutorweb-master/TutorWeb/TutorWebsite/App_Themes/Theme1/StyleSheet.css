@@ -1,0 +1,107 @@
+﻿body {
+}
+
+
+#headnav {
+    margin-bottom: 5%;
+}
+
+ul li {
+    display: inline;
+    margin: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#headnav li a {
+    padding: 0 25px;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9em;
+}
+
+    #headnav li a:hover {
+        color: white;
+        background: #000;
+        padding: 15px 25px;
+    }
+
+#headnav #divider a {
+    color: #000;
+    padding: 0;
+}
+
+    #headnav #divider a:hover {
+        background: white;
+    }
+
+.textBox:focus {
+    outline: 0;
+    background: transparent;
+}
+
+.textBox {
+    width: 400px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background: #ffe5e5;
+    border-radius: 3px;
+    border: 1px solid gray;
+    -webkit-text-fill-color: black;
+}
+
+.btnSearch {
+    background: #96281B;
+    border: 0;
+    padding: 20px 30px;
+    margin-top: 20px;
+    color: white;
+}
+
+    .btnSearch:hover {
+        background: black;
+    }
+
+.mainTable {
+    margin-top: 5%;
+}
+
+.btnLogin {
+    background: #1287A8;
+    border: 0;
+    padding: 20px 30px;
+    margin-top: 20px;
+    color: white;
+    font-size: Large;
+}
+
+    .btnLogin:hover {
+        background: #0D3D56;
+    }
+
+.btnProfile {
+    background: #0C374D;
+    border: 0;
+    vertical-align: top;
+    padding: 10px 30px;
+    margin-top: 20px;
+    color: white;
+    font-size: small;
+}
+
+.txtName {
+    color: #003399;
+    Font-Size: Large;
+    text-align: left;
+}
+
+.tbBorder {
+    border-bottom: solid 1px #DADEDF;
+    border-top: solid 1px #DADEDF;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+

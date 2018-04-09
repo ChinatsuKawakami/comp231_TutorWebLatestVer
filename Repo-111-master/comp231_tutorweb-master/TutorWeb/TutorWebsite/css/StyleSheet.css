@@ -1,0 +1,164 @@
+﻿body {
+}
+
+/*Reccomend tutor*/
+.recommendbody {
+    background-color: #0D4AFB;
+}
+.ratingtd {
+    
+    position: absolute;
+    width: 100%;
+    position: center;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.Recommendtitle {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    font-size: x-large;
+}
+.btn btn-primary btn-block {
+    margin: 100px;
+}
+
+/*paymentPayperUser */
+.body_paymentforpay {
+    margin: 30px 10px 10px 10px;
+    width: 140%;
+    position: absolute;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: larger;
+}
+
+
+/*paymentForSubscription*/
+.body-paymentSubscription
+{
+    margin: 30px 10px 10px 10px;
+    width: 140%;
+    position: absolute;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: larger;
+}
+}
+/*AccountPayperUser*/
+.div.body-accountPayper {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    margin: 10px;
+
+}
+.mainTable {
+    background-color: #bdc8ff;
+}
+.lfindtutor {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lbooksession {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.laccountU {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lrecommend {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lviewHistory {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lneartutor {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+
+/*AccountSubscription page*/
+
+.lfindtutorS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lbooksessionS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.laccountInfoS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lrecommendS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lforumS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.luploadfileS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lviewHistoryS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+.lnearTutorS {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+/*UploadFile*/
+.uploadbody {
+    background-color: #429c81;
+}
+.uploadtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font: bold;
+    font-size: 32px;
+}
+.uploadicon{
+    margin :10px 10px 10px 10px;
+}
+.submitfile {
+    background-color: #bed0e9;
+}
+.submitfileBtn {
+    font-family: 'Times New Roman', Times, serif;
+}
+.fileupload {
+    background-color: lightcoral;
+    margin: 5px;
+}
+.div.btn-group{
+    margin:10px auto;
+}
+.uploadDDL {
+   /* margin: 10px 10px 10px 10px;*/
+}
+
+/* History Page*/
+.historytd {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+   
+}
+.historyalltd {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: #ffb745;
+}
+.historybody {
+    background-color: coral;
+}
+
+
+/*Centering Pages*/
+
+.myspecialdiv {
+    align-content: center;
+}

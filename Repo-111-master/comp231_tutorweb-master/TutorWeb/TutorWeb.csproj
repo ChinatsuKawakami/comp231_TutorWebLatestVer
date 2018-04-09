@@ -1,0 +1,609 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E49716F2-BB71-44B0-802C-E0E2B6BA8912}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TutorWeb</RootNamespace>
+    <AssemblyName>TutorWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.HtmlEditor.Sanitizer, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.HtmlEditor.Sanitizer.18.1.0\lib\net40\AjaxControlToolkit.HtmlEditor.Sanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.7.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.7.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.7.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.7.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Platform, Version=1.2.1.291, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Platform.NET.1.2.1.291\lib\net452\Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Platform.Xml.Serialization, Version=1.2.1.291, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Platform.Xml.Serialization.1.2.1.291\lib\net452\Platform.Xml.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.3.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.3.0\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection.Metadata, Version=1.4.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Reflection.Metadata.1.5.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.4.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Register.mdf" />
+    <Content Include="App_Data\Register_log.ldf">
+      <DependentUpon>Register.mdf</DependentUpon>
+    </Content>
+    <Content Include="Database Registration\Registration.mdf" />
+    <Content Include="Database Registration\Registration_log.ldf">
+      <DependentUpon>Registration.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Images\aboutus.png" />
+    <Content Include="Images\blackButton.jpg" />
+    <Content Include="Images\grayButton.jpg" />
+    <Content Include="Images\search.png" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="TutorWebsite\AccountPayperUser.aspx" />
+    <Content Include="TutorWebsite\AccountSubscription.aspx" />
+    <Content Include="TutorWebsite\css\StyleSheet.css" />
+    <Content Include="TutorWebsite\Bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\csc.exe.config" />
+    <Content Include="TutorWebsite\Bin\roslyn\csc.exe.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\csc.rsp" />
+    <Content Include="TutorWebsite\Bin\roslyn\csi.exe.config" />
+    <Content Include="TutorWebsite\Bin\roslyn\csi.exe.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\csi.rsp" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.Win32.Primitives.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.AppContext.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Collections.Immutable.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Console.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Diagnostics.FileVersionInfo.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Diagnostics.Process.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Diagnostics.StackTrace.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.Compression.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.FileSystem.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.FileSystem.DriveInfo.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.FileSystem.Primitives.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.Pipes.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Reflection.Metadata.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.AccessControl.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Claims.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.Algorithms.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.Encoding.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.Primitives.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.X509Certificates.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Principal.Windows.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Text.Encoding.CodePages.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Threading.Thread.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.ValueTuple.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.ReaderWriter.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.XmlDocument.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.XPath.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.XPath.XDocument.dll.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\vbc.exe.config" />
+    <Content Include="TutorWebsite\Bin\roslyn\vbc.exe.refresh" />
+    <Content Include="TutorWebsite\Bin\roslyn\vbc.rsp" />
+    <Content Include="TutorWebsite\Bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="TutorWebsite\Bin\roslyn\VBCSCompiler.exe.refresh" />
+    <Content Include="TutorWebsite\BookSession.aspx" />
+    <Content Include="TutorWebsite\ChangePassword.aspx" />
+    <Content Include="TutorWebsite\Forum.aspx" />
+    <Content Include="TutorWebsite\Forum2.aspx" />
+    <Content Include="TutorWebsite\History.aspx" />
+    <Content Include="TutorWebsite\Images\account.png" />
+    <Content Include="TutorWebsite\Images\arrow-upload-icon.png" />
+    <Content Include="TutorWebsite\Images\cvvcode.png" />
+    <Content Include="TutorWebsite\Images\emptyStar.jpg" />
+    <Content Include="TutorWebsite\Images\filledStar.png" />
+    <Content Include="TutorWebsite\Images\history.png" />
+    <Content Include="TutorWebsite\Images\human-resources.png" />
+    <Content Include="TutorWebsite\Images\Master-Card-icon.png" />
+    <Content Include="TutorWebsite\Images\outbox.png" />
+    <Content Include="TutorWebsite\Images\placeholder.png" />
+    <Content Include="TutorWebsite\Images\recommended-star.png" />
+    <Content Include="TutorWebsite\Images\reunion.png" />
+    <Content Include="TutorWebsite\Images\search.png" />
+    <Content Include="TutorWebsite\Images\Visa-icon.png" />
+    <Content Include="TutorWebsite\Images\waitingstar.png" />
+    <Content Include="TutorWebsite\Map.aspx" />
+    <Content Include="TutorWebsite\MasterPage.master" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="TutorWebsite\packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\15.png" />
+    <Content Include="Images\bartSimpson.JPG" />
+    <Content Include="Images\book.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\simpson.JPG" />
+    <Content Include="Images\star.png" />
+    <Content Include="Images\textbook.png" />
+    <Content Include="Images\time.png" />
+    <Content Include="Images\time2.png" />
+    <Content Include="Images\toystory.jpeg" />
+    <Content Include="Images\toystory2.jpeg" />
+    <Content Include="Images\tutor.png" />
+    <Content Include="Images\tutor3.png" />
+    <Content Include="TutorWebsite\About.aspx" />
+    <Content Include="TutorWebsite\App_Themes\Theme1\StyleSheet.css" />
+    <Content Include="TutorWebsite\Bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="TutorWebsite\Bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="TutorWebsite\Bin\roslyn\csc.exe" />
+    <Content Include="TutorWebsite\Bin\roslyn\csi.exe" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.AppContext.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Console.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Diagnostics.Process.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Threading.Thread.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="TutorWebsite\Bin\roslyn\vbc.exe" />
+    <Content Include="TutorWebsite\Bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="TutorWebsite\Findtutor.aspx" />
+    <Content Include="TutorWebsite\Images\15.png" />
+    <Content Include="TutorWebsite\Images\bartSimpson.JPG" />
+    <Content Include="TutorWebsite\Images\book.png" />
+    <Content Include="TutorWebsite\Images\logo.png" />
+    <Content Include="TutorWebsite\Images\simpson.JPG" />
+    <Content Include="TutorWebsite\Images\star.png" />
+    <Content Include="TutorWebsite\Images\textbook.png" />
+    <Content Include="TutorWebsite\Images\time.png" />
+    <Content Include="TutorWebsite\Images\time2.png" />
+    <Content Include="TutorWebsite\Images\toystory.jpeg" />
+    <Content Include="TutorWebsite\Images\toystory2.jpeg" />
+    <Content Include="TutorWebsite\Images\tutor.png" />
+    <Content Include="TutorWebsite\Images\tutor3.png" />
+    <Content Include="TutorWebsite\Login.aspx" />
+    <Content Include="TutorWebsite\Main.aspx" />
+    <Content Include="TutorWebsite\PaymentForPayPerUse.aspx" />
+    <Content Include="TutorWebsite\PaymentForSubscription.aspx" />
+    <Content Include="TutorWebsite\Pricing.aspx" />
+    <Content Include="TutorWebsite\RecommendTutor.aspx" />
+    <Content Include="TutorWebsite\Signup.aspx" />
+    <Content Include="TutorWebsite\Subject.aspx" />
+    <Content Include="TutorWebsite\Tutor.aspx" />
+    <Content Include="TutorWebsite\UploadFile.aspx" />
+    <Content Include="TutorWebsite\Userinfo.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TutorWebsite\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\AccountPayperUser.aspx.cs">
+      <DependentUpon>AccountPayperUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\AccountPayperUser.aspx.designer.cs">
+      <DependentUpon>AccountPayperUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\AccountSubscription.aspx.cs">
+      <DependentUpon>AccountSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\AccountSubscription.aspx.designer.cs">
+      <DependentUpon>AccountSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\BookSession.aspx.cs">
+      <DependentUpon>BookSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\BookSession.aspx.designer.cs">
+      <DependentUpon>BookSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\Findtutor.aspx.cs">
+      <DependentUpon>Findtutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Forum.aspx.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Forum.aspx.designer.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\Forum2.aspx.cs">
+      <DependentUpon>Forum2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Forum2.aspx.designer.cs">
+      <DependentUpon>Forum2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\History.aspx.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\History.aspx.designer.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\PaymentForPayPerUse.aspx.cs">
+      <DependentUpon>PaymentForPayPerUse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\PaymentForPayPerUse.aspx.designer.cs">
+      <DependentUpon>PaymentForPayPerUse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\PaymentForSubscription.aspx.cs">
+      <DependentUpon>PaymentForSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\PaymentForSubscription.aspx.designer.cs">
+      <DependentUpon>PaymentForSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\Pricing.aspx.cs">
+      <DependentUpon>Pricing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Pricing.aspx.designer.cs">
+      <DependentUpon>Pricing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\RecommendTutor.aspx.cs">
+      <DependentUpon>RecommendTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\RecommendTutor.aspx.designer.cs">
+      <DependentUpon>RecommendTutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Subject.aspx.cs">
+      <DependentUpon>Subject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Tutor.aspx.cs">
+      <DependentUpon>Tutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\UploadFile.aspx.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\UploadFile.aspx.designer.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\Userinfo.aspx.cs">
+      <DependentUpon>Userinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\Userinfo.aspx.designer.cs">
+      <DependentUpon>Userinfo.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11797</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/comp231_tutorweb-master/TutorWeb/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

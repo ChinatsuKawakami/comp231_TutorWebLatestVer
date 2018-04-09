@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+   <%--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />--%>
+    <link href="Content/StyleSheet.css" rel="stylesheet"
+        type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <!-- Style to make list horizontal-->
+
+    <style type="text/css">
+        li {
+            display:inline;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+
+<body style="align-content: center; text-align: center; margin: 0px; padding: 0px; width: 100%; height: 100%">
+    <form id="form1" runat="server">
+        <a href="Main.aspx">
+            <asp:Image runat="server" ImageUrl="~/Images/logo.png" Height="50" Width="50" /></a>
+        <header style="height: 45px">
+
+<%--            <!-- Navbar -->
+            <div class="w3-top">
+                <div class="w3-bar w3-black w3-card w3-theme">
+                    <asp:Menu ID="menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" StaticSubMenuIndent="10px" MaximumDynamicDisplayLevels="1" StaticDisplayLevels="2">
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <LevelMenuItemStyles>
+                            <asp:MenuItemStyle CssClass="w3-bar-item w3-button w3-padding-large" />
+                        </LevelMenuItemStyles>
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticItemTemplate>
+                            <%# Eval("Text") %>
+                        </StaticItemTemplate>
+                    </asp:Menu>
+                   
+                                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+
+                                    </div>
+            </div>--%>
+
+            <nav id="headnav">
+
+                <ul>
+                    <li><a href="Findtutor.aspx">Find a tutor</a></li>
+                    <li><a href="Subject.aspx">Subjects</a></li>
+                    <li><a href="About.aspx">About us</a></li>
+                    <li><a href="Pricing.aspx">Pricing</a></li>
+                    <li><a href="Main.aspx">Become a tutor</a></li>
+                    <li><a href="Signup.aspx">SIGN UP</a></li>
+                    <li><a href="Login.aspx">LOG IN</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div runat="server" style="z-index: 2; position: relative; top: 00px; height: 400px; margin-left: 00px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
