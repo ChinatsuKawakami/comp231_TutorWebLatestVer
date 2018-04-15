@@ -3,7 +3,9 @@
        <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" runat="server" />
 
     <div class="historybody">
-    <asp:Table ID ="historyalltd" CssClass="historyalltd"  runat="server" Height="265px" Width="100%">
+
+
+    <%--<asp:Table ID ="historyalltd" CssClass="historyalltd"  runat="server" Height="265px" Width="100%">
       <asp:TableRow>
         <asp:TableCell>
             <asp:Image ID="historyicon" runat="server" ImageUrl="Images/account.png" Height="150" Width="150"/><br />
@@ -34,7 +36,7 @@
              </asp:Table>
         </asp:TableCell>
 </asp:TableRow>   
-    </asp:Table>
+    </asp:Table>--%>
        </div>
 </asp:Content>
 
