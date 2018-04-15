@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -12,7 +14,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
     protected void Loginbtn_Click(object sender, EventArgs e)
     {
@@ -23,24 +25,42 @@ public partial class Login : System.Web.UI.Page
         }
         try
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;
-            Integrated Security=True";
-            SqlCommand cmd = new SqlCommand("Select * From login where username=@user and Password=@pass", con);
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@user", studentUserName.Text);
-            cmd.Parameters.AddWithValue("@pass", studentPassword.Text);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnectionString"].ToString());
+           // con.ConnectionString = "Data Source =.; Initial Catalog = comp231; Integrated Security = SSPI;";
             con.Open();
+            string query = "Select count(*) From Users where username='" + studentUserName.Text + "'and password='" + studentPassword.Text + "'";
 
-            if (cmd.ExecuteScalar().ToString() == "1")
+            SqlCommand cmd = new SqlCommand(query,con);
+            int output =(int)cmd.ExecuteScalar();
+
+            if(output == 1)
             {
-                studentUserName.Text = "";
-                studentPassword.Text = "";
+                Session["username"] = studentUserName.Text;
 
-
+                //later we should check if the user is subscription or payper use
+                Response.Redirect("~/TutorWebsite/BookSession.aspx");
+            }
+            else if(output==0)
+            {
+                Response.Write("Login Failed");
             }
 
+            //cmd.Parameters.Clear();
+            //cmd.Parameters.AddWithValue("@username", studentUserName.Text);
+            //cmd.Parameters.AddWithValue("@password", studentPassword.Text);
+            
+
+            //if (cmd.ExecuteScalar().ToString() == "1")
+            //{
+            //    studentUserName.Text = "";
+            //    studentPassword.Text = "";
+
+
+            //}
+            
+            
             con.Close();
+            
         }
         catch
         {
