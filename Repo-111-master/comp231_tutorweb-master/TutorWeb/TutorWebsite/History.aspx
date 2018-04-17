@@ -3,7 +3,9 @@
        <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" runat="server" />
 
     <div class="historybody">
+<asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" HorizontalAlign="Center"></asp:GridView>
 
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 
     <%--<asp:Table ID ="historyalltd" CssClass="historyalltd"  runat="server" Height="265px" Width="100%">
       <asp:TableRow>

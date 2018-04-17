@@ -3,59 +3,35 @@
 
 <asp:Content ID="tutor" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
     
-    <asp:Table runat="server" BackColor="#F2F3F4" style="margin-left: 350px; margin-bottom:30px; margin-top:5px; padding-top:15px; padding-bottom:15px" Width="779px" >
-        <asp:TableRow>
-            <asp:TableCell>
-               <asp:Image runat="server" ImageUrl="~/Images/toystory2.jpeg" Width="250px" Height="250px"/>
-            </asp:TableCell>    
-            <asp:TableCell HorizontalAlign="Left">
-                <asp:Label runat="server" >Bob Smith</asp:Label><br /><br />
-                <asp:Label runat="server">Toronto, Ontario</asp:Label><br /><br />
-                <asp:Label runat="server">Email: BobSmith@gmail.com</asp:Label><br /><br />
-                <asp:Label runat="server">Centennial College, Progress Campus</asp:Label><br /><br />
-                <asp:Label runat="server">Join Date: January 1, 2017</asp:Label>
-                <asp:Label runat="server"></asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
+  <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+      <Columns>
+          <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
+          <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+          <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" SortExpression="PhoneNumber" />
+          <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+          <asp:BoundField DataField="PostalCode" HeaderText="PostalCode" SortExpression="PostalCode" />
+          <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+          <asp:BoundField DataField="Rate" HeaderText="Rate" SortExpression="Rate" />
+          <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
+          <asp:BoundField DataField="Subject" HeaderText="Subject" SortExpression="Subject" />
+          <asp:ButtonField HeaderText="Booking Session" ShowHeader="True" Text="Book" />
 
-    <asp:Table runat="server" style="margin-bottom:10px; margin-left: 459px;" Width="572px">
-        <asp:TableRow CssClass="tbBorder" style="border-collapse:separate; display:table-cell; border-spacing:10px">
-            <asp:TableCell>
-               <asp:Label runat="server">Tutor Rating: 8.5</asp:Label><asp:Image runat="server" ImageAlign="Bottom" ImageUrl="~/Images/star.png" Width="100px" />
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow CssClass="tbBorder">
-            <asp:TableCell >
-                  <asp:Label runat="server" style="font-size: x-large">About Bob Smith</asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow CssClass="tbBorder">
-            <asp:TableCell>
-                <asp:Label runat="server" Font-Bold="true" style="font-size: large">Subjects</asp:Label><br />
-                <asp:Label runat="server">Accounting</asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow CssClass="tbBorder">
-            <asp:TableCell m>
-                <asp:Label runat="server" Font-Bold="true" style="font-size: large">Education</asp:Label><br />
-                <asp:Label runat="server">Bachelors in Accounting from Centennial College</asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow CssClass="tbBorder">
-            <asp:TableCell>
-                <asp:Label runat="server" Font-Bold="true" style="font-size: large">Career Experience</asp:Label><br />
-                <asp:Label runat="server">I have been working as a public accountant for 10 years. I have years of experience working with trial balances, adjusting accounts and financial statements.</asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow CssClass="tbBorder">
-            <asp:TableCell>
-                <asp:Label runat="server" Font-Bold="true" style="font-size: large">Biography</asp:Label><br />
-                <asp:Label runat="server">Detailed description here</asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-   
-    <asp:Button runat="server" CssClass="btnSearch" Text="Contact" />
-    <asp:Button runat="server" CssClass="btnSearch" Text="Leave review" />
+      </Columns>
+      <FooterStyle BackColor="White" ForeColor="#000066" />
+      <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+      <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+      <RowStyle ForeColor="#000066" />
+      <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+      <SortedAscendingCellStyle BackColor="#F1F1F1" />
+      <SortedAscendingHeaderStyle BackColor="#007DBB" />
+      <SortedDescendingCellStyle BackColor="#CAC9C9" />
+      <SortedDescendingHeaderStyle BackColor="#00547E" />
+    </asp:GridView>
+             
+
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT Tutor.FirstName, Tutor.LastName, Tutor.PhoneNumber, Tutor.Address, Tutor.PostalCode, Tutor.Email, Tutor.Rate, Tutor.image, Subject.Subject AS Subject FROM Tutor INNER JOIN Subject ON Tutor.subjectId = Subject.SubjectId"></asp:SqlDataSource>
+             
+
+    <asp:Button runat="server" CssClass="btnSearch" Text="Contact" ID="ContactBTN" OnClick="Unnamed1_Click" />
+    <asp:Button runat="server" CssClass="btnSearch" Text="Leave review" ID="BackBTN" OnClick="BackBTN_Click" />
 </asp:Content>

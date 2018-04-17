@@ -1,8 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.master" CodeFile="Findtutor.aspx.cs" Inherits="Findtutor" %>
 
 <asp:Content ID="find" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-    <div runat="server" style="align-content:center; background-color:#f2f2f2; padding-top:20px">
-    <asp:Table runat="server" style="margin-left: 286px; padding-bottom:15px;  border-collapse: collapse; " Width="956px">
+    <div runat="server" id="findtutor" style="align-content:center; background-color:#f2f2f2; padding-top:20px">
+
+      
+  <%--  <asp:Table runat="server" style="margin-left: 286px; padding-bottom:15px;  border-collapse: collapse; " Width="956px">
         <asp:TableRow CssClass="tbBorder">
             <asp:TableCell>
                 <asp:Image runat="server" ImageUrl="~/Images/toystory2.jpeg" Width="120px" Height="120px" />
@@ -68,7 +70,45 @@
                 <asp:Button runat="server" CssClass="btnProfile" Text="VIEW PROFILE" />
             </asp:TableCell>
         </asp:TableRow>
-    </asp:Table>
+    </asp:Table>--%>
+
+        <br />
+        Tutor Name: <asp:DropDownList ID="tutorDDL" AutoPostBack="True" runat="server" DataSourceID="SqlDataSource2" DataTextField="FirstName" DataValueField="FirstName" OnSelectedIndexChanged="tutorDDL_SelectedIndexChanged"></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT [FirstName] FROM [Tutor]"></asp:SqlDataSource>
+        <br />
+        <asp:GridView ID="GridViewTutors"  AutoPostBack="True" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="TutorId" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnSelectedIndexChanged="GridViewTutors_SelectedIndexChanged" OnSelectedIndexChanging="GridViewTutors_SelectedIndexChanged">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
+                <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" SortExpression="PhoneNumber" />
+                <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                <asp:BoundField DataField="PostalCode" HeaderText="PostalCode" SortExpression="PostalCode" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                <asp:BoundField DataField="Rate" HeaderText="Rate" SortExpression="Rate" />
+                <asp:ButtonField CommandName="Select" HeaderText="Book Session" ShowHeader="True" Text="Book" />
+            </Columns>
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+        </asp:GridView>
+
+
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT [TutorId], [FirstName], [LastName], [PhoneNumber], [Address], [PostalCode], [Email], [Rate], [tutorimage] FROM [Tutor] WHERE ([FirstName] = @FirstName)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="tutorDDL" Name="FirstName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:Image ID="Image1" runat="server" width="259px" Height="194px"/>
+     
+       
 
     </div>
 

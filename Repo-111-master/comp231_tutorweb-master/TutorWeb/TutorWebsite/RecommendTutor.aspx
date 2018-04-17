@@ -38,15 +38,17 @@
 
  <div class="recommendbody">
    <asp:Label CssClass="Recommendtitle" ID="Recommendtitle" runat="server" Text="Recommended Tutor"></asp:Label>
+     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT FirstName + ' ' + LastName AS Name FROM Tutor" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+          
     <asp:Table ID="ratingtd" CssClass="ratingtd" runat="server" width=80% Height="30%" HorizontalAlign="Center">
         <asp:TableHeaderRow Width="80%" HorizontalAlign="Center">
             <asp:TableHeaderCell>
                 <br />
          </asp:TableHeaderCell>
             <asp:TableHeaderCell>
-                   <asp:DropDownList runat="server" ID="RatingDDL" CssClass="RatingDDL">
+              <asp:DropDownList runat="server"  AutoPostBack="True" ID="RatingDDL" CssClass="RatingDDL"  DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="tutorId" >
                    <%--  Add tutor name with whom the user took session so far--%>
-                    <asp:ListItem>Choose Tutor to whom you want to give Stars</asp:ListItem>
+                 <asp:ListItem>Choose Tutor</asp:ListItem>
                    </asp:DropDownList>
             
          </asp:TableHeaderCell>
