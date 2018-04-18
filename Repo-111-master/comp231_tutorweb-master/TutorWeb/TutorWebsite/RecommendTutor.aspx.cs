@@ -38,7 +38,7 @@ public partial class RecommendTutor : System.Web.UI.Page
 
         SqlCommand ins = new SqlCommand("update Tutor Set Rate="+ rateave+"Where TutorId ="+tutorid);
         ins.ExecuteNonQuery();
-        SqlCommand cmd = new SqlCommand("insert into RecommendTutor values(Punctuality ='" + punctual +"TeachingSkill"+teaching+"Material"+material+"PositiveAttitude"+positive+"Help"+helpful+"Comments"+comment+"Where TutorId="+tutorid+"')", con);
+        SqlCommand cmd = new SqlCommand("insert into RecommendTutor(Punctuality,TeachingSkill,Material,PositiveAttitude,Help,Comments) values('"+punctual+teaching+"','"+material+ "','" + positive+helpful+ "','" + comment+"Where TutorId="+tutorid+"')", con);
         cmd.ExecuteNonQuery();
 
 

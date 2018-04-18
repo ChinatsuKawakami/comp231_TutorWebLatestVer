@@ -331,6 +331,7 @@
     <Content Include="TutorWebsite\Images\search.png" />
     <Content Include="TutorWebsite\Images\Visa-icon.png" />
     <Content Include="TutorWebsite\Images\waitingstar.png" />
+    <Content Include="TutorWebsite\LoginTutor.aspx" />
     <Content Include="TutorWebsite\Map.aspx" />
     <Content Include="TutorWebsite\MasterPage.master" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
@@ -352,6 +353,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="TutorWebsite\TutoerMainpage.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -503,6 +505,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="TutorWebsite\LoginTutor.aspx.cs">
+      <DependentUpon>LoginTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\LoginTutor.aspx.designer.cs">
+      <DependentUpon>LoginTutor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TutorWebsite\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -553,6 +562,13 @@
     <Compile Include="TutorWebsite\Subject.aspx.cs">
       <DependentUpon>Subject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\TutoerMainpage.aspx.cs">
+      <DependentUpon>TutoerMainpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\TutoerMainpage.aspx.designer.cs">
+      <DependentUpon>TutoerMainpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="TutorWebsite\Tutor.aspx.cs">
       <DependentUpon>Tutor.aspx</DependentUpon>

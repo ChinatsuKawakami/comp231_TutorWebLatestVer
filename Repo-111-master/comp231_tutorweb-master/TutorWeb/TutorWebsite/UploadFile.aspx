@@ -7,9 +7,13 @@
 <asp:Label runat="server" class="uploadtitle" Text="UPLOAD FILE" ID="uploadtitle"></asp:Label><br />
     <asp:Image ImageUrl="Images/arrow-upload-icon.png" runat="server" class="uploadicon" height="100px" Width="100px"/><br />
     <div class="tutorDDL" runat="server">
-    <asp:DropDownList ID="uploadDDL" class="uploadDDL" runat="server" Width="300px">
-     <asp:ListItem>Choose Tutor who can access your file</asp:ListItem>
+    <asp:Label runat="server" Text="File Name"></asp:Label>
+    <asp:TextBox runat="server" ID="filenameTxtBox"></asp:TextBox>
+    <br />
+        <asp:Label runat="server" Text="Choose a Tutor who will get your file"></asp:Label>
+    <asp:DropDownList ID="uploadDDL" class="uploadDDL" runat="server" Width="300px" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="TutorId">
     </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT [FirstName]+' '+ [LastName] as Name, [TutorId] FROM [Tutor]"></asp:SqlDataSource>
     </div>
     <div class ="btn-group">
     <asp:FileUpload ID="fileupload" class="fileupload" runat="server"/><br />

@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Configuration;
 
-
-    public partial class Userinfo : System.Web.UI.Page
+public partial class Userinfo : System.Web.UI.Page
     {
        // fields for change photo icon/profile and insert it into database
         public int ImageID { get; set; }
         public string Title { get; set; }
         public string ImagePath { get; set; }
 
-
+   
         protected void Page_Load(object sender, EventArgs e)
         {
              
@@ -22,6 +25,31 @@ using System.Web.UI.HtmlControls;
 
     protected void UploadImg_Click(object sender, EventArgs e)
     {
+        //string str;
+        //str = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ToString();
+        //SqlConnection con = new SqlConnection(str);
+        
+        //if (uploadproImg.HasFile)
+        //{
+        //    try
+        //    {
+        //        string filename = uploadproImg.FileName;
+        //        // string filename = Path.GetFileName(fileupload.FileName);
+        //        uploadproImg.SaveAs(Server.MapPath("~/") + filename);
+        //        string path = "~//uploads//" + filename.ToString();
+        //        con.Open();
+        //        SqlCommand com = new SqlCommand("Update Users SET userImage = '" + path +"WHERE "+ "')", con);
+        //        com.ExecuteNonQuery();
+        //        con.Close();
+              
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //statusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+
+        //    }
+        //}
         // userImg.ImageUrl = 
 
         //create photoimageController class and connect with this class 
@@ -49,5 +77,7 @@ using System.Web.UI.HtmlControls;
     {
         // textbox'value for cellphone, address etc are current userinfo(current phone, address) 
         // Firstname , Lastname should be read-only
+     
+
     }
 }
