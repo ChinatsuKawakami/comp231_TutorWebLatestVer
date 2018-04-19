@@ -89,7 +89,7 @@
              <asp:TableRow>
              <asp:TableCell>
                <asp:Button runat="server" ID="paysubbtn" OnClick="paysubbtn_BTN" text="Make Payment" class="btn btn-success"/>&nbsp;
-               <asp:Button runat="server" ID="Button1" text="Cancel Payment" class="btn btn-warning"/>
+               <asp:Button runat="server" ID="Button1" OnClick="Button1_Click" text="Cancel Payment" class="btn btn-warning"/>
               </asp:TableCell>
               </asp:TableRow>
         </asp:Table>

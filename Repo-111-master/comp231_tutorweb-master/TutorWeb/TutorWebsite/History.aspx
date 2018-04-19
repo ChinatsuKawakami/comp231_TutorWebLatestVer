@@ -3,9 +3,14 @@
        <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" runat="server" />
 
     <div class="historybody">
-<asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" HorizontalAlign="Center"></asp:GridView>
+<asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" HorizontalAlign="Center" AutoGenerateColumns="False">
+    <Columns>
+        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+        <asp:BoundField DataField="PaymentDate" HeaderText="PaymentDate" SortExpression="PaymentDate" />
+    </Columns>
+        </asp:GridView>
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT [Price], [PaymentDate] FROM [Payment]"></asp:SqlDataSource>
 
     <%--<asp:Table ID ="historyalltd" CssClass="historyalltd"  runat="server" Height="265px" Width="100%">
       <asp:TableRow>

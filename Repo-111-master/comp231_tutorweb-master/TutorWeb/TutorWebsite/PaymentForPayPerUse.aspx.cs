@@ -52,6 +52,7 @@ public partial class PaymentForPayPerUse : System.Web.UI.Page
             cmd = new SqlCommand("Insert Into Payment(Price, SubscriptionUser,CardNumber,ExpiryDate,PaymentDate)Values(Price =" + Convert.ToInt32(sessionList.Text) + "','" + "SubscriptionUser=" + 0 + "','" + "CardNumber=" + Convert.ToInt32(cardnumtxtbox.Text) + "','" + "ExpiryDate=" + date + "','" + "PaymentDate=" + todaydate + "where userid =" + userid + "')", con1);
             cmd.ExecuteNonQuery();
             con1.Close();
+            Response.Redirect("~/SuncessPayment.aspx");
         }
         catch(Exception ex)
         {
@@ -59,5 +60,10 @@ public partial class PaymentForPayPerUse : System.Web.UI.Page
         }
         
 
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Pricing.aspx");
     }
 }

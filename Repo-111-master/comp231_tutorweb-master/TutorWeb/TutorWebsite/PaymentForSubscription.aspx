@@ -10,7 +10,7 @@
             <asp:TableCell>
                 <asp:Label runat="server" Font-Bold="true" ForeColor="#0C374D">Order Summary</asp:Label><br />
                 <asp:Label runat="server" Font-Bold="true" ForeColor="#0C374D">Description: Subscription in a month </asp:Label><br />
-                <asp:Label runat="server" Font-Bold="true" ForeColor="#0C374D">Amount: 100.00 CAD</asp:Label>
+                <asp:Label runat="server" Font-Bold="true" ForeColor="#0C374D">Amount: 145.00 CAD</asp:Label>
             </asp:TableCell>
         </asp:TableRow>
                 <asp:TableRow>
@@ -81,8 +81,8 @@
             
              <asp:TableRow>
              <asp:TableCell>
-               <asp:Button runat="server" ID="paysubbtn" text="Make Payment" class="btn btn-success"/>&nbsp;
-               <asp:Button runat="server" ID="Button1" text="Cancel Payment" class="btn btn-warning"/>
+               <asp:Button runat="server" ID="paysubbtn" OnClick="paysubbtn_BTN" text="Make Payment" class="btn btn-success"/>&nbsp;
+               <asp:Button runat="server" ID="Button1" OnClick="Button1_Click" text="Cancel Payment" class="btn btn-warning"/>
               </asp:TableCell>
               </asp:TableRow>
         </asp:Table>
