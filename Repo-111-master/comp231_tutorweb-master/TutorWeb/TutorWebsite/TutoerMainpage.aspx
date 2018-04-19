@@ -6,8 +6,36 @@
     <link rel="stylesheet" href="../Content/bootstrap.min.css" />
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns>
+            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
+            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+            <asp:BoundField DataField="Rate" HeaderText="Rate" SortExpression="Rate" />
+            <asp:BoundField DataField="Punctuality" HeaderText="Punctuality" SortExpression="Punctuality" />
+            <asp:BoundField DataField="TeachingSkill" HeaderText="TeachingSkill" SortExpression="TeachingSkill" />
+            <asp:BoundField DataField="Material" HeaderText="Material" SortExpression="Material" />
+            <asp:BoundField DataField="PositiveAttitude" HeaderText="PositiveAttitude" SortExpression="PositiveAttitude" />
+            <asp:BoundField DataField="Helpful" HeaderText="Helpful" SortExpression="Helpful" />
+            <asp:BoundField DataField="Comments" HeaderText="Comments" SortExpression="Comments" />
+        </Columns>
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT Users.FirstName, Users.LastName, Tutor.Rate, RecommendTutor.Punctuality, RecommendTutor.TeachingSkill, RecommendTutor.Material, RecommendTutor.PositiveAttitude, RecommendTutor.Helpful, RecommendTutor.Comments FROM RecommendTutor INNER JOIN Users ON RecommendTutor.UserId = Users.UserId INNER JOIN Tutor ON RecommendTutor.TutorId = Tutor.TutorId"></asp:SqlDataSource>
     <br /> 
+
     
+    
+    <asp:Button runat="server" ID="ScheduleBTN" OnClick="ScheduleBTN_Click"/>
   
 
     

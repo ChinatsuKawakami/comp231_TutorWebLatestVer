@@ -355,6 +355,7 @@
     </None>
     <Content Include="TutorWebsite\SuncessPayment.aspx" />
     <Content Include="TutorWebsite\TutoerMainpage.aspx" />
+    <Content Include="TutorWebsite\TutorSchedule.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -595,6 +596,13 @@
     </Compile>
     <Compile Include="TutorWebsite\Userinfo.aspx.designer.cs">
       <DependentUpon>Userinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorWebsite\TutorSchedule.aspx.cs">
+      <DependentUpon>TutorSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\TutorSchedule.aspx.designer.cs">
+      <DependentUpon>TutorSchedule.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
