@@ -353,6 +353,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="TutorWebsite\SuncessPayment.aspx" />
     <Content Include="TutorWebsite\TutoerMainpage.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
@@ -562,6 +563,13 @@
     <Compile Include="TutorWebsite\Subject.aspx.cs">
       <DependentUpon>Subject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\SuncessPayment.aspx.cs">
+      <DependentUpon>SuncessPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorWebsite\SuncessPayment.aspx.designer.cs">
+      <DependentUpon>SuncessPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="TutorWebsite\TutoerMainpage.aspx.cs">
       <DependentUpon>TutoerMainpage.aspx</DependentUpon>

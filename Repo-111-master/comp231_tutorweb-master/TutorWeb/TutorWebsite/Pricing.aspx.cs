@@ -8,35 +8,36 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Data.SqlClient;
+using System.Data.Sql;
+using System.Configuration;
 
 
 public partial class Pricing : System.Web.UI.Page
     {
-    //Button PayperBtn = 
+  
         protected void Page_Load(object sender, EventArgs e)
         {                   
             //payperBtn.Click += new EventHandler(this.PayperBtn_Click);
             //subBtn.Click += new EventHandler(this.SubBtn_Click);
         }
 
-    protected void PayperBtn_Click(Object sender,
-                        EventArgs e)
+    protected void onehourBTN_Click(object sender, EventArgs e)
     {
-        // When the button is clicked,
-        // change the button text, and disable it.
-
         Response.Redirect("PaymentForPayPerUse.aspx");
-         
     }
-
-    protected void SubBtn_Click(Object sender,
-                        EventArgs e)
+    protected void twohourBTN_Click(object sender, EventArgs e)
     {
-        // When the button is clicked,
-        // change the button text, and disable it.
-
-        Response.Redirect("PaymentForSubscription.aspx");
-
+        Response.Redirect("PaymentForPayPerUse.aspx");
     }
+    protected void fourhourBTN_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("PaymentForPayPerUse.aspx");
+    }
+    protected void subscriptBTN_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("PaymentForSubscription.aspx");
+    }
+ 
 }
 

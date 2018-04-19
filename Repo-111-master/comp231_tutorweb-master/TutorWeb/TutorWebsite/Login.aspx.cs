@@ -44,21 +44,6 @@ public partial class Login : System.Web.UI.Page
             {
                 Response.Write("Login Failed");
             }
-
-            //cmd.Parameters.Clear();
-            //cmd.Parameters.AddWithValue("@username", studentUserName.Text);
-            //cmd.Parameters.AddWithValue("@password", studentPassword.Text);
-            
-
-            //if (cmd.ExecuteScalar().ToString() == "1")
-            //{
-            //    studentUserName.Text = "";
-            //    studentPassword.Text = "";
-
-
-            //}
-            
-            
             con.Close();
             
         }
@@ -71,28 +56,3 @@ public partial class Login : System.Web.UI.Page
   
 }
 
-
-    //protected void UserLogin_Authenticate(object sender, AuthenticateEventArgs e)
-    //{
-
-    //    string check = "select count(*) from [User] where Email = '" + tutorLogin.UserName + "' and Password = '" + tutorLogin.Password + "'";
-    //    SqlCommand com = new SqlCommand(check, con);
-    //    con.Open();
-    //    int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
-    //    con.Close();
-    //    if (temp == 1)
-    //    {
-
-    //        Response.Redirect("AccountPayperUser.aspx");
-    //        //Response.Redirect("AccountSubscription.aspx");
-    //    }
-    //    else
-    //    {
-
-    //    }
-    //}
-
-    //protected void Signupid_Click(object sender, EventArgs e)
-    //{
-    //    Response.Redirect("Signup.aspx");
-    //}

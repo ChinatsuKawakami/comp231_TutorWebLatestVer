@@ -22,7 +22,7 @@
                     <asp:TableCell><sup style="font-size: 1.6rem;position: relative; display:inline-block; margin-top: 12px; margin-right: 3px; vertical-align: top;">$</sup><span style="font-size: 3.7rem;letter-spacing:2px; font-weight: bold;">39</span><sub style="font-size: 1.0em;position: absolute;margin-top: 45px;text-transform: uppercase;">/ mo.</sub></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow > 
-                    <asp:TableCell><asp:Button runat="server" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
+                    <asp:TableCell><asp:Button runat="server" ID="onehourBTN" OnClick="onehourBTN_Click" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
 
@@ -40,7 +40,7 @@
                     <asp:TableCell><sup style="font-size: 1.6rem;position: relative; display:inline-block; margin-top: 12px; margin-right: 3px; vertical-align: top;">$</sup><span style="font-size: 3.7rem;letter-spacing:2px; font-weight: bold;">69</span><sub style="font-size: 1.0em;position: absolute;margin-top: 45px;text-transform: uppercase;">/ mo.</sub></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow >
-                    <asp:TableCell><asp:Button runat="server" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
+                    <asp:TableCell><asp:Button runat="server" ID="twohourBTN" OnClick="twohourBTN_Click" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
 
@@ -58,7 +58,7 @@
                    <asp:TableCell><sup style="font-size: 1.6rem;position: relative; display:inline-block; margin-top: 12px; margin-right: 3px; vertical-align: top;">$</sup><span style="font-size: 3.7rem;letter-spacing:2px; font-weight: bold;">119</span><sub style="font-size: 1.0em;position: absolute;margin-top: 45px;text-transform: uppercase;">/ mo.</sub></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow >
-                    <asp:TableCell><asp:Button runat="server" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
+                    <asp:TableCell><asp:Button runat="server" ID="fourhourBTN" OnClick="fourhourBTN_Click" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
 
@@ -76,7 +76,7 @@
                     <asp:TableCell><sup style="font-size: 1.6rem;position: relative; display:inline-block; margin-top: 12px; margin-right: 3px; vertical-align: top;">$</sup><span style="font-size: 3.7rem;letter-spacing:2px; font-weight: bold;">145</span><sub style="font-size: 1.0em;position: absolute;margin-top: 45px;text-transform: uppercase;">/ mo.</sub></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow >
-                    <asp:TableCell><asp:Button runat="server" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
+                    <asp:TableCell><asp:Button runat="server" ID="subscriptBTN" OnClick="subscriptBTN_Click" Text="Choose Plan" Width="100%" Height="40px" BorderWidth="0" Font-Size="Medium" BackColor="#D14A32" ForeColor="White"> </asp:Button> </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
         </div>

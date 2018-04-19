@@ -11,16 +11,9 @@
                 <asp:Label runat="server" Font-Bold="true"  ForeColor="#0C374D">Order Summary</asp:Label><br />
                 <asp:Label runat="server" Font-Bold="true" ForeColor="#0C374D">How many hours do you want to book for session? </asp:Label>
                 <asp:DropDownList runat="server" ID="sessionList" onselectedindexchanged="itemSelected" AutoPostBack="true">
-                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                     <asp:ListItem Text="6" Value="6"></asp:ListItem>
-                     <asp:ListItem Text="7" Value="7"></asp:ListItem>
-                     <asp:ListItem Text="8" Value="8"></asp:ListItem>
-                     <asp:ListItem Text="9" Value="9"></asp:ListItem>
-                     <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                    <asp:ListItem Text="1 hour:$39 " Value="39"></asp:ListItem>
+                     <asp:ListItem Text="2 hours:$69" Value="69"></asp:ListItem>
+                     <asp:ListItem Text="4 hours:$119" Value="119"></asp:ListItem>              
                 </asp:DropDownList>
                 <br />
                 <asp:Label runat="server" Font-Bold="true" ForeColor="#0C374D">Description: Subscription in a month </asp:Label><br />
@@ -95,17 +88,11 @@
             
              <asp:TableRow>
              <asp:TableCell>
-               <asp:Button runat="server" ID="paysubbtn" text="Make Payment" class="btn btn-success"/>&nbsp;
+               <asp:Button runat="server" ID="paysubbtn" OnClick="paysubbtn_BTN" text="Make Payment" class="btn btn-success"/>&nbsp;
                <asp:Button runat="server" ID="Button1" text="Cancel Payment" class="btn btn-warning"/>
               </asp:TableCell>
               </asp:TableRow>
         </asp:Table>
         </div>
 </asp:Content>
-<script runat="server">
-    protected void itemSelected(object sender, EventArgs e)
-    {
-        double totalItems = 20 * Convert.ToDouble(sessionList.SelectedValue);
-        amountresult.Text = totalItems.ToString("C");
-    }
-</script>
+

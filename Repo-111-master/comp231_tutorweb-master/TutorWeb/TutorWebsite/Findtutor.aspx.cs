@@ -24,16 +24,19 @@ public partial class Findtutor : System.Web.UI.Page
         str = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ToString();
         SqlConnection con = new SqlConnection(str);
         con.Open();
-        SqlCommand cmd = new SqlCommand("select image from tutor where firstname='"+tutorDDL.SelectedValue+"'",con);
+        SqlCommand cmd = new SqlCommand("select tutorimage from tutor where firstname='"+tutorDDL.SelectedValue+"'",con);
         SqlDataReader dr = cmd.ExecuteReader();
         if(dr.HasRows)
         {
             while(dr.Read())
             {
+                byte[] imgd = (byte[])dr["tutorImage"];
+                string image = Convert.ToBase64String(imgd, 0, imgd.Length);
+                //be careful for image style (jpg,png etc)
+                Image1.ImageUrl = "data:Image/jpg;base64," + image;
 
 
-
-                Image1.ImageUrl = dr[0].ToString();
+             //   Image1.ImageUrl = dr[0].ToString();
                 //img1.ImageUrl =(byte[])dr[0];
 
                 /* byte[] imagedata = (byte[])dr[0];*/

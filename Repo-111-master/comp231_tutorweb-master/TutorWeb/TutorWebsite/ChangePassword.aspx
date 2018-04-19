@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.master" CodeFile="Signup.aspx.cs" Inherits="Signup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.master" CodeFile="ChangePassword.aspx.cs" Inherits="ChangePassword" %>
 
 <asp:Content ID="signup" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
     <div runat="server" style="background-color:#e9f2fb; height: 600px; z-index:1">
@@ -14,22 +14,22 @@
             </asp:TableRow>
              <asp:TableRow>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" CssClass="changeTextBox"  placeholder="Current Password"></asp:TextBox>                  
+                    <asp:TextBox runat="server" CssClass="changeTextBox" ID="currentpassTxtBox"  placeholder="Current Password"></asp:TextBox>                  
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" CssClass="changeTextBox"  placeholder="New Password"></asp:TextBox>                  
+                    <asp:TextBox runat="server" CssClass="changeTextBox" ID="newpassTxtBox"  placeholder="New Password"></asp:TextBox>                  
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:TextBox runat="server" CssClass="changeTextBox"  placeholder="Confirm Password"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="changeTextBox" ID="confirmpassTxtBox" placeholder="Confirm Password"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                   <asp:Button ID="btnChangepw1" runat="server" Text="UPDATE PASSWORD" CssClass="btnChange" />
+                   <asp:Button ID="btnChangepw1" runat="server" Text="UPDATE PASSWORD" CssClass="btnChange" OnClick="BtnChangepw1_Click" />
                     </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>

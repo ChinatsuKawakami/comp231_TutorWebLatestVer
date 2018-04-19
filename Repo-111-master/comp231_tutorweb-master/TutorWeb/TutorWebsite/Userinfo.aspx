@@ -26,6 +26,8 @@
             <asp:TextBox runat="server" ID ="emailTxtBox"  value=""></asp:TextBox><br />
             <asp:Label runat="server" ID="Address">Address : </asp:Label>
             <asp:TextBox runat="server" ID ="addressTxtBox"  value=""></asp:TextBox><br />
+             <asp:Label runat="server" ID="PostalCode">PostalCode : </asp:Label>
+            <asp:TextBox runat="server" ID ="postalTxtBox"  value=""></asp:TextBox><br />
             <asp:Label runat="server" ID="phone">Phone : </asp:Label>
             <asp:TextBox runat="server" ID ="phoneTxtBox"  value=""></asp:TextBox><br /><br /><br />
 
