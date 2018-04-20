@@ -19,6 +19,7 @@ public partial class TutorSchedule : System.Web.UI.Page
     bool btn;
     int m;
     int tutorid;
+    int g, h;
     string data;
     string[] clist;
     string format = "dd/MM/yyyy HH:mm:ss";
@@ -54,31 +55,31 @@ public partial class TutorSchedule : System.Web.UI.Page
                 foreach (ListItem item in CheckBoxList1.Items)
                 {
 
-            if (item.Selected)
-            {
+                 if (item.Selected)
+                  {
 
-                if (selected.Contains(item))
-                { continue; }
-                else if (!selected.Contains(item))
-                {
-                    selected.Add(item);
-                    if(!label1.Text.Contains(selected[i].Text))
-                    {
+                     if (selected.Contains(item))
+                      { continue; }
+                     else if (!selected.Contains(item))
+                     {
+                       selected.Add(item);
+                      if(!label1.Text.Contains(selected[i].Text))
+                      {
                         label1.Text += selected[i] + "<br/>";
-                    }
+                      }
                     
-                    i++;
+                      i++;
                
                 
-                }
+                      }
 
-            }
+                 }
 
-
-            }
+           
+                 }
                 
         
-
+                
 
 
 
@@ -102,14 +103,23 @@ public partial class TutorSchedule : System.Web.UI.Page
             tutorid = Convert.ToInt32(Session["TutorId"]);
 
             provider = new CultureInfo("fr-FR");
-            for (int m = 0; m < i + 1; m++)
+              
+           
+                for (int g = 0; g < selected.Count;g++){
+                    clist[g] = cal1.SelectedDate.ToString("dd/MM/yyyy") + selected[g].Text;
+
+                }
+
+
+
+
+            for (h = 0; h < selected.Count; h++)
             {
-                
-                data += daylabel.Text + selected[m];
+                SqlCommand cmd = new SqlCommand("insert into Booking(Time,TimeStatus) values('" + DateTime.Parse(clist[h], provider) + "','" + 1 + "Where TutorId=" + tutorid + "')", con);
+                cmd.ExecuteNonQuery();
             }
-            SqlCommand cmd = new SqlCommand("insert into Booking(Time,TimeStatus) values('" + DateTime.Parse(data, provider) + "','" + 1 + "Where TutorId=" + tutorid + "')", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+                con.Close();
+            
             resultLabel.Text = "Update has been Successful!";
         }
         catch(Exception ex)

@@ -34,15 +34,15 @@
         <asp:TableRow>
             
               <asp:TableCell>
-                <asp:Button ID="submitBTN" OnClick="submitBTN_Click" Text="SUBMIT" runat="server" />
-            </asp:TableCell>
+              <asp:Button ID="submitBTN" OnClick="submitBTN_Click" Text="SUBMIT" runat="server" />
+              </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow ID="submitrow">
            
             <asp:TableCell ID="result" runat="server">
-                <asp:Label ID="daylabel" runat="server"></asp:Label>
-                <asp:Label ID="label1"  runat="server"></asp:Label>
-                <asp:Label ID="resultLabel" runat="server"></asp:Label>
+            <asp:Label ID="daylabel" runat="server"></asp:Label>
+            <asp:Label ID="label1"  runat="server"></asp:Label>
+            <asp:Label ID="resultLabel" runat="server"></asp:Label>
         
 
             </asp:TableCell>
