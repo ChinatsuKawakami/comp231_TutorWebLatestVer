@@ -128,4 +128,9 @@ public partial class TutorSchedule : System.Web.UI.Page
         }
         
     }
+
+    protected void BackBTN_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/TutorWebsite/TutoerMainpage.aspx");
+    }
 }

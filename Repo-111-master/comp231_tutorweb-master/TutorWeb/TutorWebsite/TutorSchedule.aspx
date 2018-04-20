@@ -36,6 +36,9 @@
               <asp:TableCell>
               <asp:Button ID="submitBTN" OnClick="submitBTN_Click" Text="SUBMIT" runat="server" />
               </asp:TableCell>
+              <asp:TableCell>
+               <asp:Button ID="BackBTN" OnClick="BackBTN_Click" Text="BACK TO MENU" runat="server" />
+              </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow ID="submitrow">
            
