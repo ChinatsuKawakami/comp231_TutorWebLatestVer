@@ -12,4 +12,15 @@ using System.Web.UI.WebControls;
         {
 
         }
-    }
+
+    //protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    //{
+    //    string name = GridView1.SelectedRow.DataItem.ToString();
+        
+    //}
+
+    //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+
+    //}
+}
