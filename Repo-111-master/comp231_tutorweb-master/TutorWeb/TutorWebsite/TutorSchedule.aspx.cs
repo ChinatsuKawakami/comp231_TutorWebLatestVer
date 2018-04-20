@@ -10,16 +10,19 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Security;
 using System.Globalization;
-using System.Linq;
+
 public partial class TutorSchedule : System.Web.UI.Page
 {
     CultureInfo provider = CultureInfo.InvariantCulture;
     string[] currentitem=new string[]{ };
-    int i = 0;
+    int i;
     bool btn;
+    int m;
     int tutorid;
+    string data;
     string[] clist;
     string format = "dd/MM/yyyy HH:mm:ss";
+    List<ListItem> selected = new List<ListItem>();
     protected void Page_Load(object sender, EventArgs e)
     {
        
@@ -46,32 +49,36 @@ public partial class TutorSchedule : System.Web.UI.Page
     }
     protected void CheckBoxList1_SelectedIndexChanged(Object sender,EventArgs e)
     {
-        //foreach (ListItem li in CheckBoxList1.Items)
-        //{
 
-        //    if(li.Selected)
-        //    {
-
-        //List <string> ar = new List<string>(CheckBoxList1.SelectedIndex);
-        
-                List<ListItem> selected = new List<ListItem>();
+                //List<ListItem> selected = new List<ListItem>();
                 foreach (ListItem item in CheckBoxList1.Items)
                 {
 
-                    if (item.Selected)
-                    {
-                        selected.Add(item);
-                      label1.Text += selected[i] + "<br/>";
-                i++;
-            }
-           
-            //   label1.Text += getStopWords().ElementAt(i).ToString() + "<br/>";
-        }
-                
+            if (item.Selected)
+            {
 
-        //    }
-        //}
-          
+                if (selected.Contains(item))
+                { continue; }
+                else if (!selected.Contains(item))
+                {
+                    selected.Add(item);
+                    if(!label1.Text.Contains(selected[i].Text))
+                    {
+                        label1.Text += selected[i] + "<br/>";
+                    }
+                    
+                    i++;
+               
+                
+                }
+
+            }
+
+
+            }
+                
+        
+
 
 
 
@@ -95,8 +102,12 @@ public partial class TutorSchedule : System.Web.UI.Page
             tutorid = Convert.ToInt32(Session["TutorId"]);
 
             provider = new CultureInfo("fr-FR");
-            string da = daylabel.Text + label1.Text;
-            SqlCommand cmd = new SqlCommand("insert into Booking(Time,TimeStatus) values('" + DateTime.Parse(da, provider) + "','" + 1 + "Where TutorId=" + tutorid + "')", con);
+            for (int m = 0; m < i + 1; m++)
+            {
+                
+                data += daylabel.Text + selected[m];
+            }
+            SqlCommand cmd = new SqlCommand("insert into Booking(Time,TimeStatus) values('" + DateTime.Parse(data, provider) + "','" + 1 + "Where TutorId=" + tutorid + "')", con);
             cmd.ExecuteNonQuery();
             con.Close();
             resultLabel.Text = "Update has been Successful!";
