@@ -30,7 +30,10 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT Users.FirstName, Users.LastName, Tutor.Rate, RecommendTutor.Punctuality, RecommendTutor.TeachingSkill, RecommendTutor.Material, RecommendTutor.PositiveAttitude, RecommendTutor.Helpful, RecommendTutor.Comments FROM RecommendTutor INNER JOIN Users ON RecommendTutor.UserId = Users.UserId INNER JOIN Tutor ON RecommendTutor.TutorId = Tutor.TutorId"></asp:SqlDataSource>
+    <%string sr = Convert.ToString(Session["TutorId"]);
+        int tutor_id = Convert.ToInt32(sr);%>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT Users.FirstName, Users.LastName, Tutor.Rate, RecommendTutor.Punctuality, RecommendTutor.TeachingSkill, RecommendTutor.Material, RecommendTutor.PositiveAttitude, RecommendTutor.Helpful, RecommendTutor.Comments FROM RecommendTutor INNER JOIN Users ON RecommendTutor.UserId = Users.UserId INNER JOIN Tutor ON RecommendTutor.TutorId = Tutor.TutorId Where TutorId=tutor_id"></asp:SqlDataSource>
+   
     <br /> 
 
     

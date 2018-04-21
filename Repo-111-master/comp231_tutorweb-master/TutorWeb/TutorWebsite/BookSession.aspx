@@ -4,13 +4,14 @@
      <br />
      <br />
    
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" OnRowCommand="GridView1_RowCommand">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
             <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
             <asp:BoundField DataField="Time" HeaderText="Time" SortExpression="Time" />
             <asp:BoundField DataField="Subject" HeaderText="Subject" SortExpression="Subject" />
+            <asp:ButtonField ButtonType="Button" CommandName="btn" HeaderText="Book" Text="Book" />
         </Columns>
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -26,4 +27,5 @@
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SqlConnectionString %>" SelectCommand="SELECT Tutor.FirstName, Tutor.LastName, Tutor.tutorimage, Booking.Time, Subject.Subject FROM Tutor INNER JOIN Booking ON Booking.TutorId = Tutor.TutorId INNER JOIN Subject ON Subject.SubjectId = Tutor.subjectId"></asp:SqlDataSource>
 
+    <asp:Label ID="label1" runat="server"></asp:Label>
 </asp:Content>

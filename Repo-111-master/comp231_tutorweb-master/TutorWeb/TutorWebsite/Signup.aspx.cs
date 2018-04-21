@@ -51,7 +51,7 @@ public partial class Signup : System.Web.UI.Page
         }
         finally
         {
-            Response.Redirect("~/TutorWebsite/BookSession.aspx");
+            Response.Redirect("~/TutorWebsite/Pricing.aspx");
             con.Close();
         }
        // Response.Redirect("BookingSession.aspx");

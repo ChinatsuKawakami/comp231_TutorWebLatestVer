@@ -33,8 +33,9 @@ public partial class PaymentForPayPerUse : System.Web.UI.Page
             SqlCommand cmd = new SqlCommand();
             SqlCommand cmduserid = new SqlCommand();
             SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnectionString"].ToString());
-            DateTime date = DateTime.ParseExact(expiryMonthList.Text, "MM/yyyy", null);
-            DateTime todaydate = DateTime.ParseExact(DateTime.Now.Date.ToString(), "MM/dd/yyyy", null);
+           // DateTime date = DateTime.ParseExact(expiryMonthList.Text, "MM/yyyy", null);
+            DateTime todaydate = DateTime.ParseExact(DateTime.Now.ToString(),"yyyy/MM/dd", null);
+            //DateTime todaydate = DateTime.ParseExact(DateTime.Now.Date.ToString(),"yyyy/mm/dd", null);
             SqlDataAdapter ada = new SqlDataAdapter();
             cmduserid = new SqlCommand("Select userid from users where username =" + Session["username"], con1);
             DataSet ds = new DataSet();
@@ -49,7 +50,7 @@ public partial class PaymentForPayPerUse : System.Web.UI.Page
                     userid = Convert.ToInt32(dr["UserId"]);
                 }
             }
-            cmd = new SqlCommand("Insert Into Payment(Price, SubscriptionUser,CardNumber,ExpiryDate,PaymentDate)Values(Price =" + Convert.ToInt32(sessionList.Text) + "','" + "SubscriptionUser=" + 0 + "','" + "CardNumber=" + Convert.ToInt32(cardnumtxtbox.Text) + "','" + "ExpiryDate=" + date + "','" + "PaymentDate=" + todaydate + "where userid =" + userid + "')", con1);
+            cmd = new SqlCommand("Insert Into Payment(Price, SubscriptionUser,CardNumber,PaymentDate)Values(Price =" + Convert.ToInt32(sessionList.Text) + "','" + "SubscriptionUser=" + 0 + "','" + "CardNumber=" + Convert.ToInt32(cardnumtxtbox.Text) + "','" + "PaymentDate=" + todaydate + "where userid =" + userid + "')", con1);
             cmd.ExecuteNonQuery();
             con1.Close();
             Response.Redirect("~/SuncessPayment.aspx");

@@ -41,13 +41,7 @@ public partial class TutorSchedule : System.Web.UI.Page
         daylabel.Text = cal1.SelectedDate.ToString("d")+"<br/>";      
         //cal1.Visible = false;
     }
-    public string[] getStopWords()
-    {
-        string[] stopWordArray = new string[CheckBoxList1.SelectedIndex];
-        CheckBoxList1.Items.CopyTo(stopWordArray, 0);
-
-        return stopWordArray;
-    }
+ 
     protected void CheckBoxList1_SelectedIndexChanged(Object sender,EventArgs e)
     {
 

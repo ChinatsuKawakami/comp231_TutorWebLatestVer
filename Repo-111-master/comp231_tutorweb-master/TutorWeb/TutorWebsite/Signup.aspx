@@ -109,7 +109,7 @@
                 </asp:TableCell></asp:TableRow><asp:TableRow>
             <asp:TableCell>
                 <asp:Button ID="BtnChangepw1" runat="server" Text="SIGN UP NOW" CssClass="btnChange" onClick="BtnChangepw1_Click"/>
-                <asp:Label runat="server" ID ="label1" Text="ee"></asp:Label>
+              
             </asp:TableCell></asp:TableRow></asp:Table></div><div runat="server" style="height:130px; background-color:black; color:white; padding-top:30px; margin-top:50px">
             <asp:Table runat="server" HorizontalAlign="Center" style="table-layout:fixed">
                 <asp:TableRow>

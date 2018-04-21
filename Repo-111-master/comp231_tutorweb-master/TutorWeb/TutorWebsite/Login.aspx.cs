@@ -38,10 +38,10 @@ public partial class Login : System.Web.UI.Page
                 Session["username"] = studentUserName.Text;
 
                 //later we should check if the user is subscription or payper use
-                string checkquery = "select subscriptionuser from payment join users on Users.userId = Payment.userId Where username ="+Session["Username"];
+                string checkquery = "select subscriptionuser from payment join users on Users.userId = Payment.userId where Users.username ="+studentUserName.Text;
                 SqlCommand cmd1 = new SqlCommand(checkquery, con);
+               cmd1.ExecuteNonQuery();
                 int sub = (int)cmd1.ExecuteScalar();
-
                 if (sub == 0)
                 {
                     Response.Redirect("~/TutorWebsite/AccountSubscription.aspx");
@@ -49,9 +49,6 @@ public partial class Login : System.Web.UI.Page
                 else if(sub == 1)
                 {
                     Response.Redirect("~/TutorWebsite/AccountPayperUser.aspx");
-                }else
-                {
-                    Response.Redirect("~/TutorWebsite/Price.aspx");
                 }
                 
             }
@@ -62,9 +59,10 @@ public partial class Login : System.Web.UI.Page
             con.Close();
             
         }
-        catch
+        catch(Exception ex)
         {
             studentPassword.Text ="";
+            Response.Write(ex.Message);
         }
     }
    
