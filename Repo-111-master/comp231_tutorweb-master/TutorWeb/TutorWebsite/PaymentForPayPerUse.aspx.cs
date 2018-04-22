@@ -28,20 +28,18 @@ public partial class PaymentForPayPerUse : System.Web.UI.Page
         try
         {
 
-
-
             SqlCommand cmd = new SqlCommand();
             SqlCommand cmduserid = new SqlCommand();
-            SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnectionString"].ToString());
-           // DateTime date = DateTime.ParseExact(expiryMonthList.Text, "MM/yyyy", null);
-            DateTime todaydate = DateTime.ParseExact(DateTime.Now.ToString(),"yyyy/MM/dd", null);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnectionString"].ToString());
+            // DateTime date = DateTime.ParseExact(expiryMonthList.Text, "MM/yyyy", null);
+            DateTime todaydate = DateTime.Now;
             //DateTime todaydate = DateTime.ParseExact(DateTime.Now.Date.ToString(),"yyyy/mm/dd", null);
             SqlDataAdapter ada = new SqlDataAdapter();
-            cmduserid = new SqlCommand("Select userid from users where username =" + Session["username"], con1);
+            cmduserid = new SqlCommand("Select UserId from Users where UserName = " + Session["username"], con);
             DataSet ds = new DataSet();
-            ada.SelectCommand = cmd;
+            ada.SelectCommand = cmduserid;
             ada.Fill(ds);
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlDataReader dr = cmduserid.ExecuteReader();
 
             if (dr.HasRows)
             {
@@ -50,9 +48,11 @@ public partial class PaymentForPayPerUse : System.Web.UI.Page
                     userid = Convert.ToInt32(dr["UserId"]);
                 }
             }
-            cmd = new SqlCommand("Insert Into Payment(Price, SubscriptionUser,CardNumber,PaymentDate)Values(Price =" + Convert.ToInt32(sessionList.Text) + "','" + "SubscriptionUser=" + 0 + "','" + "CardNumber=" + Convert.ToInt32(cardnumtxtbox.Text) + "','" + "PaymentDate=" + todaydate + "where userid =" + userid + "')", con1);
+            con.Close();
+            con.Open();
+            cmd = new SqlCommand("Insert Into Payment(Price, SubscriptionUser, CardNumber, PaymentDate) Values (Price = " + Convert.ToInt32(sessionList.Text) + "','" + "SubscriptionUser = " + 0 + "','" + "CardNumber = " + Convert.ToInt32(cardnumtxtbox.Text) + "','" + "PaymentDate = " + todaydate + " where UserId = " + userid + "')", con);
             cmd.ExecuteNonQuery();
-            con1.Close();
+            con.Close();
             Response.Redirect("~/SuncessPayment.aspx");
         }
         catch(Exception ex)

@@ -59,29 +59,21 @@
         <div id="secondSection" runat="server" style="background-color:#f9ebeb; height:280px; padding-top:30px">
     <asp:Label ID="nameOfSearch" runat="server" Font-Size="X-Large" Font-Names="Arial Black" ForeColor="#96281B" Text="Our online tutors are ready to help you."></asp:Label><br /><br />
             <asp:Label runat="server" Text="Type in the Search box below to find the best tutor suits you or subject you want to study"></asp:Label><br /><br />
-    <asp:TextBox ID="name" runat="server" CssClass="textBox" placeholder=" What subject are you looking for help with?"></asp:TextBox><br />
-    <asp:Button ID="btnSearch" runat="server" Text="Click to search" CssClass="btnSearch" />
+    <asp:TextBox ID="name" runat="server" style="width: 400px;height: 40px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background: #ffe5e5;
+    border-radius: 3px;
+    border: 1px solid gray;
+    -webkit-text-fill-color: black;" CssClass="textBox" placeholder=" What subject are you looking for help with?"></asp:TextBox><br />
+    <asp:Button ID="btnSearch" runat="server" Style="    background: #96281B;
+    border: 0;
+    padding: 20px 30px;
+    margin-top: 20px;
+    color: white;" Text="Click to search" CssClass="btnSearch" />
         </div>
         
-        <div id="thirdSection" runat="server" style="height:550px; margin-top:50px;" >
-            <asp:Label runat="server" Text="Tutors of This Month" Font-Size="XX-Large" Font-Names="CG Times"></asp:Label><br /><br />
-
-            <asp:Table runat="server" ID="tb" style="right:50px; " Width="1200px">
-            <asp:TableRow>
-                <asp:TableCell style="padding-left:250px">
-                    <asp:Image ID="rankImage" runat="server" AlternateText="Elsa" ImageUrl="~/Images/rank4.png" height="400px" Width="330px" />
-                </asp:TableCell>
-                <asp:TableCell>
-                        <asp:Image ID="rankImage2" runat="server" ImageUrl="~/Images/rank1.jpg" height="230px" Width="250px" />
-                        <asp:Image ID="rankImage3" runat="server" ImageUrl="~/Images/rank2.jpg" height="230px" Width="250px" />
-                    </asp:TableCell>
-                        <asp:TableCell>
-                    <asp:Image ID="rankImage4" runat="server" ImageUrl="~/Images/rank3.jpg" height="230px" Width="250px" />
-                    <asp:Image ID="rankImage5" runat="server" ImageUrl="~/Images/rank5.jpg" height="230px" Width="250px" />
-                </asp:TableCell>
-            </asp:TableRow>
-                </asp:Table>
-        </div>
+      
 
         <asp:TableRow>
           <asp:TableCell Width="30%">

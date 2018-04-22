@@ -7,7 +7,7 @@
     <asp:Label runat="server" Text="Get tutoring at an affordable price. Join NOW" Font-Bold="true" Font-Size="2.6em" ></asp:Label>
 
         <div runat="server" style="z-index:2; position:relative;top:70px; height:400px; margin-left:110px;">
-            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:300px; float:left; margin-right: 20px; border-spacing:0">
+            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:20%; float:left; margin-right: 20px; border-spacing:0">
                 <asp:TableRow style="background-color:#D14A32; color:white">
                     <asp:TableCell><span style="font-size: 2.8rem;letter-spacing:2px; font-weight: bold;">1 hour</span><br />
                         <sub style="font-size: 0.9em;text-transform: uppercase;">monthly</sub>
@@ -26,7 +26,7 @@
                 </asp:TableRow>
             </asp:Table>
 
-            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:300px; float:left;margin-right: 20px;border-spacing:0">
+            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:20%; float:left;margin-right: 20px;border-spacing:0">
                 <asp:TableRow style="background-color:#D14A32; color:white">
                     <asp:TableCell><span style="font-size: 2.8rem;letter-spacing:2px; font-weight: bold;">2 hour</span><br />
                         <sub style="font-size: 0.9em;text-transform: uppercase;">monthly</sub></asp:TableCell>
@@ -44,7 +44,7 @@
                 </asp:TableRow>
             </asp:Table>
 
-            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:300px; float:left;margin-right: 20px;border-spacing:0">
+            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:20%; float:left;margin-right: 20px;border-spacing:0">
                 <asp:TableRow style="background-color:#D14A32; color:white">
                     <asp:TableCell><span style="font-size: 2.8rem;letter-spacing:2px; font-weight: bold;">4 hour</span><br />
                         <sub style="font-size: 0.9em;text-transform: uppercase;">monthly</sub></asp:TableCell>
@@ -62,7 +62,7 @@
                 </asp:TableRow>
             </asp:Table>
 
-            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:300px; float:left;border-spacing:0">
+            <asp:Table runat="server" style="background-color:#f2f2f2; height:420px; width:20%; float:left;border-spacing:0">
                 <asp:TableRow style="background-color:#D14A32; color:white">
                     <asp:TableCell><span style="font-size: 2.8rem;letter-spacing:2px; font-weight: bold;">$145</span><br />
                         <sub style="font-size: 0.9em;text-transform: uppercase;">monthly</sub></asp:TableCell>

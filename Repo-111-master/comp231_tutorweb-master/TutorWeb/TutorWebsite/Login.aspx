@@ -7,6 +7,7 @@
     <asp:Table runat="server" style="padding-bottom:20px; left:35%; top:20px; padding-top:20px; width: 450px;position:relative; z-index:2; box-shadow: 10px 15px 25px 10px #E2E4E6; background-color: #eeeedd">
         <asp:TableRow>
             <asp:TableCell>
+              
                 <asp:Label runat="server" Text="Login as a Student" Font-Size="X-Large" Font-Names="Arial Black" ></asp:Label><br /><br />
             </asp:TableCell>
         </asp:TableRow>
@@ -17,12 +18,12 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <asp:TextBox runat="server" CssClass="changeTextBox" placeholder="Password" ID="studentPassword"></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="changeTextBox" TextMode="Password" placeholder="Password" ID="studentPassword"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Button runat="server" CssClass="btnProfile" OnClick="Loginbtn_Click" ID="loginbtn" Text="Log In"  />
+                <asp:Button runat="server" style="background: #0C374D;border: 0;vertical-align: top;padding: 10px 30px;margin-top: 20px;color: white;font-size: small;" CssClass="btnProfile" OnClick="Loginbtn_Click" ID="loginbtn" Text="Log In"  />
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>        
@@ -41,7 +42,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button runat="server" CssClass="btnLogin" PostBackUrl="~/Signup.aspx" text="Join Variable X" />
+                    <asp:Button runat="server" style="background: #1287A8;border: 0;padding: 20px 30px;margin-top: 20px;color: white; font-size: Large;" CssClass="btnLogin" PostBackUrl="~/Signup.aspx" text="Join Variable X" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:table>
@@ -59,7 +60,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Button runat="server" CssClass="btnLogin" PostBackUrl="~/Findtutor.aspx" text="Find a tutor now" />
+                    <asp:Button runat="server" style="background: #1287A8;border: 0;padding: 20px 30px;margin-top: 20px;color: white; font-size: Large;" CssClass="btnLogin" PostBackUrl="~/Findtutor.aspx" text="Find a tutor now" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:table>

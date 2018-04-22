@@ -63,7 +63,6 @@
                     <li><a href="Subject.aspx">Subjects</a></li>
                     <li><a href="About.aspx">About us</a></li>
                     <li><a href="Pricing.aspx">Pricing</a></li>
-                    <li><a href="Main.aspx">Become a tutor</a></li>
                     <li><a href="Signup.aspx">SIGN UP</a></li>
                     <li><a href="Login.aspx">LOG IN</a></li>
                 </ul>
